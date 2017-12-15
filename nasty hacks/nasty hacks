@@ -1,0 +1,23 @@
+import java.util.*;
+public class nasty{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        int n= input.nextInt();
+        int r, e, c;
+        for(int i=0; i<n; i++){
+            r = input.nextInt();
+            e = input.nextInt();
+            c = input.nextInt();
+            if((e-c)>r){
+                System.out.println("advertise");
+            }
+            else if((e-r)< c){
+                System.out.println("do not advertise");
+            }
+            else{
+                System.out.println("does not matter");
+            }
+        }
+        input.close();
+    }
+}
