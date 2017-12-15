@@ -1,0 +1,48 @@
+import java.util.*;
+public class countingStars{
+  static char[][] array;
+  public static void main(String[] args){
+    Scanner input = new Scanner(System.in);
+    int k=0;
+    while(input.hasNext()){
+      k++;
+      int n= input.nextInt();
+      int m= input.nextInt();
+      input.nextLine();
+      array = new char[n][m];
+      int l;
+      for(int i=0; i<n; i++){ 
+        array[i] = input.nextLine().toCharArray();
+      }
+      int counter=0;
+      
+      for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+          if(array[i][j]=='-'){
+            counter++;
+            
+            look(i,j, n, m);
+          }
+        }
+      }
+  
+      System.out.println("Case " + k + ": " + counter);
+    }
+  }
+  
+
+  public static void look(int i, int j, int m, int n){
+    if(i<0 || i>m-1 || j<0 || j>n-1){
+      return;
+    }
+    if(array[i][j]!='-'){
+      return;
+    }
+    array[i][j]='a';
+    look(i-1, j, m, n);
+    look(i+1, j, m, n);
+    look(i, j+1, m, n);
+    look(i, j-1, m, n);
+    
+  }
+}
