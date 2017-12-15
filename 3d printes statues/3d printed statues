@@ -1,0 +1,15 @@
+import java.util.*;
+public class printer{
+  public static void main(String[] args){
+    int day=0;
+    int numPrinter = 1;
+    Scanner input = new Scanner(System.in);
+    int objects = input.nextInt();
+    while(numPrinter< objects){
+      day++;
+      numPrinter*=2;  
+    }
+    day++;
+    System.out.println(day);
+  }
+}
