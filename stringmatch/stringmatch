@@ -1,0 +1,40 @@
+import java.util.*;
+public class stringmatch{
+  public static void main(String[] args){
+    Scanner input = new Scanner(System.in);
+    while(input.hasNext()){
+      
+      //pattern, text and pi initialization
+      char[] pattern = input.nextLine().toCharArray();
+      char[] text = input.nextLine().toCharArray();
+      int pi[] = new int[pattern.length];
+      
+      //implementing pi array
+      pi[0]=-1;
+      int k=-1;
+      for(int i=1; i<pattern.length; i++){
+        while(k>=0 && pattern[k+1]!=pattern[i]){
+          k=pi[k];
+        }
+        if (pattern[k+1] == pattern[i]){
+          pi[i]=++k;
+        }
+      }
+      
+      
+      int l=-1;
+      for(int i=0; i< text.length; ++i){
+        while (l >=0 && pattern[l+1]!=text[i]) l=pi[l];
+        if(pattern[l+1] == text[i]) l++;
+        if(l+1==pattern.length){
+          l=pi[l];
+          System.out.print( i - pattern.length +1 + " ");
+        }   
+      }
+       System.out.println("");
+    }
+    
+    
+    input.close();
+  }
+}
