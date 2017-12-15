@@ -1,0 +1,12 @@
+import java.util.*;
+public class take{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        if ((input.nextInt()%2)==1){
+            System.out.println("Alice");
+        }
+        else{
+            System.out.println("Bob");
+        }
+    }
+}
