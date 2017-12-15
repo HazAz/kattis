@@ -1,0 +1,20 @@
+import java.util.*;
+import java.lang.Integer;
+public class ones{
+  public static void main(String[] args){ 
+    Scanner input  = new Scanner(System.in);
+    while(input.hasNext()){
+      
+      int n = input.nextInt();
+      int count = 1;
+      int integer = 1;
+      int max = Integer.MAX_VALUE;
+      while ((integer % n != 0) && (count < max)){
+        integer = integer * 10 + 1;
+        integer=integer%n;
+        count++;
+      }
+      System.out.println(count);
+    }
+  }
+}
