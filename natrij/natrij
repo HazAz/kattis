@@ -1,0 +1,62 @@
+import java.util.*;
+public class natrij{
+  public static void main(String[] args){
+    Scanner input = new Scanner(System.in);
+    char[] t1 = input.nextLine().toCharArray();
+    char[] t2 = input.nextLine().toCharArray();
+    
+    int t1hour = Character.getNumericValue(t1[0])*10 + Character.getNumericValue(t1[1]);
+    int t1min = Character.getNumericValue(t1[3])*10 + Character.getNumericValue(t1[4]);
+    int t1sec = Character.getNumericValue(t1[6])*10 + Character.getNumericValue(t1[7]);
+    
+    int t2hour = Character.getNumericValue(t2[0])*10 + Character.getNumericValue(t2[1]);
+    int t2min = Character.getNumericValue(t2[3])*10 + Character.getNumericValue(t2[4]);
+    int t2sec = Character.getNumericValue(t2[6])*10 + Character.getNumericValue(t2[7]);
+
+    int carry1=0;
+    int carry2=0;
+    
+    int totalSecond = t2sec - t1sec;
+    if(totalSecond<0){
+      totalSecond+=60;
+      if(t2min>0) t2min-=1;
+      else{
+       t2min = 59;
+       if(t2hour>0){
+         t2hour-=1;
+       }
+       else{
+        t2hour = 23; 
+       }
+      }
+    }
+    
+    int totalMin = t2min-t1min;
+    if (totalMin<0){
+      totalMin+=60;
+      if(t2hour>0) t2hour-=1;
+      else t2hour= 23;
+    }
+    
+    int totalHour = t2hour-t1hour;
+    
+    if (totalHour<0) totalHour+=24;
+    
+    if(totalSecond>=60){ totalSecond-=60; totalMin+=1;}
+    if(totalMin>=60){ totalMin-=60; totalHour+=1;}
+    if(totalHour>24) totalHour-=24;
+  
+    String ts, tm, th;
+    if (totalSecond<10) ts = "0" +Integer.toString(totalSecond);
+    else ts = Integer.toString(totalSecond);
+    
+    if (totalMin<10) tm = "0" +Integer.toString(totalMin);
+    else tm = Integer.toString(totalMin);
+    
+    if (totalHour<10) th = "0" +Integer.toString(totalHour);
+    else th = Integer.toString(totalHour);
+    
+    if(totalHour==0 && totalMin==0 && totalSecond==0) System.out.println("24:00:00");
+    else System.out.println(th+":"+tm+":"+ts);
+  }
+}
