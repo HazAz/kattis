@@ -1,0 +1,39 @@
+import java.util.*;
+public class jabuke{
+  public static void main(String[] args){
+    Scanner input = new Scanner(System.in);
+    int x1 = input.nextInt();
+    int y1 = input.nextInt();
+    int x2 = input.nextInt();
+    int y2 = input.nextInt();
+    int x3 = input.nextInt();
+    int y3 = input.nextInt();
+    
+    double sol = Math.abs((x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2))/2.0);
+    
+    int counter=0;
+    
+    int trees = input.nextInt();
+    for(int i=0; i<trees; i++){
+      
+      int x4 = input.nextInt();
+      int y4 = input.nextInt();
+      
+      double solA = (x1*(y2-y4) + x2*(y4-y1) + x4*(y1-y2))/2.0;
+      double solB = (x1*(y4-y3) + x4*(y3-y1) + x3*(y1-y4))/2.0;
+      double solC = (x4*(y2-y3) + x2*(y3-y4) + x3*(y4-y2))/2.0;
+      
+      
+      if(Math.abs(Math.abs(solA)+Math.abs(solB)+Math.abs(solC) - sol) < 0.000001){
+        counter++;
+      }  
+    }
+    
+    double t = Math.round(sol*10);
+    sol = t/10.0;
+    
+    System.out.println(sol);
+    System.out.println(counter);
+    
+  }
+}
