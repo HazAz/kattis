@@ -1,0 +1,28 @@
+import java.util.*;
+class countingTree{
+  
+  public static void main(String[] args){   
+  Scanner input = new Scanner(System.in);
+  int n = input.nextInt();
+  ArrayList<Integer> arrayTree = new ArrayList<Integer>();
+    
+  int bestDay = 0;
+  
+  for(int i = 0; i < n; i++){
+        arrayTree.add(input.nextInt());
+    }
+  
+    Collections.sort(arrayTree, Collections.reverseOrder());
+  
+    for(int i = 0; i < n; i++){
+        if(arrayTree.get(i) + i + 2 > bestDay){
+            bestDay = arrayTree.get(i) + i + 2;
+        }
+    }
+    
+
+    System.out.println(bestDay);
+  }
+  
+
+}
