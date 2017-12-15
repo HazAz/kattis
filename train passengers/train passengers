@@ -1,0 +1,53 @@
+import java.util.*;
+
+public class train{
+  public static void main(String[] args){
+    Scanner input = new Scanner(System.in);
+    int capacity = input.nextInt();
+    int stops = input.nextInt();
+    int left = input.nextInt();
+    int entered = input.nextInt();
+    int waited = input.nextInt();
+    stops--;
+    if(left != 0 ){
+      System.out.println("impossible");
+      return;
+    }
+    if(capacity > entered && waited > 0){
+      System.out.println("impossible");
+      return;
+    }
+    if(entered > capacity){
+      System.out.println("impossible");
+      return;
+    }
+    for(int i=0; i< stops; i++){
+      int newLeft = input.nextInt();
+      int newEntered = input.nextInt();
+      int newWaiting = input.nextInt();
+      if (newLeft > entered){
+        System.out.println("impossible");
+        break;
+      }
+      entered -=newLeft;
+      if(newEntered > capacity - entered){
+        System.out.println("impossible");
+        break;
+      }
+      entered += newEntered;
+      if(capacity > entered && newWaiting > 0){
+        System.out.println("impossible");
+        break;
+      }
+      if (i == stops-1){
+        if(entered > 0 || newWaiting >0){
+          System.out.println("impossible"); 
+          break;
+        }
+        else{
+          System.out.println("possible"); 
+        }
+      }
+    }  
+  }
+}
