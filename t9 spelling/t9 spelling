@@ -1,0 +1,83 @@
+import java.util.*;
+public class spelling{
+  public static void main(String[] args){
+    Scanner input = new Scanner(System.in);
+    int cases = input.nextInt();
+    String t = input.nextLine();
+    for(int i=1; i<cases+1; i++){
+      
+      char[] s = input.nextLine().toCharArray();
+      System.out.println("Case #" + i +": ");
+      for(int j=0; j<s.length; j++){
+        if(s[j]=='a'){
+          if(j!=0 && (s[j-1]=='b' || s[j-1]=='c' ||s[j-1]=='a')){System.out.print(" 2");}
+          else {System.out.print("2");}}
+        else if(s[j]=='b'){
+          if(j!=0 && (s[j-1]=='a' || s[j-1]=='c' ||s[j-1]=='b')){System.out.print(" 22");}
+          else {System.out.print("22");}}
+        else if(s[j]=='c'){
+          if(j!=0 && (s[j-1]=='a' || s[j-1]=='b' ||s[j-1]=='c')){System.out.print(" 222");}
+          else {System.out.print("222");} 
+        }
+        
+        else if(s[j]=='d'){ 
+          if(j!=0 && (s[j-1]=='e' || s[j-1]=='f' ||s[j-1]=='d')){System.out.print(" 3");}
+          else {System.out.print("3");}}
+        else if(s[j]=='e'){if(j!=0 && (s[j-1]=='d' || s[j-1]=='f' ||s[j-1]=='e')){System.out.print(" 33");}
+          else {System.out.print("33");}}
+        else if(s[j]=='f'){
+          if(j!=0 && (s[j-1]=='d' || s[j-1]=='e' ||s[j-1]=='f')){System.out.print(" 333");}
+          else {System.out.print("333");}}
+        
+        
+        else if(s[j]=='g') {if(j!=0 && (s[j-1]=='h' || s[j-1]=='i' ||s[j-1]=='g')){System.out.print(" 4");}
+          else {System.out.print("4");}}
+        else if(s[j]=='h') {if(j!=0 && (s[j-1]=='g' || s[j-1]=='i' ||s[j-1]=='h')){System.out.print(" 44");}
+          else {System.out.print("44");}}
+        else if(s[j]=='i') {if(j!=0 && (s[j-1]=='g' || s[j-1]=='h' ||s[j-1]=='i')){System.out.print(" 444");}
+          else {System.out.print("444");}}
+        else if(s[j]=='j') {if(j!=0 && (s[j-1]=='k' || s[j-1]=='l' ||s[j-1]=='j')){System.out.print(" 5");}
+          else {System.out.print("5");}}
+        else if(s[j]=='k') {if(j!=0 && (s[j-1]=='j' || s[j-1]=='l' ||s[j-1]=='k')){System.out.print(" 55");}
+          else {System.out.print("55");}}
+        else if(s[j]=='l') {if(j!=0 && (s[j-1]=='j' || s[j-1]=='k' ||s[j-1]=='l')){System.out.print(" 555");}
+          else {System.out.print("555");}}
+        else if(s[j]=='m') {if(j!=0 && (s[j-1]=='n' || s[j-1]=='o' ||s[j-1]=='m')){System.out.print(" 6");}
+          else {System.out.print("6");}}
+        else if(s[j]=='n') {if(j!=0 && (s[j-1]=='m' || s[j-1]=='o' ||s[j-1]=='n')){System.out.print(" 66");}
+          else {System.out.print("66");}}
+        else if(s[j]=='o') {if(j!=0 && (s[j-1]=='m' || s[j-1]=='n' ||s[j-1]=='o')){System.out.print(" 666");}
+          else {System.out.print("666");}}
+        else if(s[j]=='p') {if(j!=0 && (s[j-1]=='q' || s[j-1]=='r' || s[j-1]=='s' ||s[j-1]=='p')){System.out.print(" 7");}
+          else {System.out.print("7");}}
+        else if(s[j]=='q') {if(j!=0 && (s[j-1]=='p' || s[j-1]=='r' || s[j-1]=='s' ||s[j-1]=='q')){System.out.print(" 77");}
+          else {System.out.print("77");}}
+        else if(s[j]=='r') {if(j!=0 && (s[j-1]=='q' || s[j-1]=='p' || s[j-1]=='s' ||s[j-1]=='r')){System.out.print(" 777");}
+          else {System.out.print("777");}}
+        else if(s[j]=='s') {if(j!=0 && (s[j-1]=='q' || s[j-1]=='r' || s[j-1]=='p' ||s[j-1]=='s')){System.out.print(" 7777");}
+          else {System.out.print("7777");}}
+        else if(s[j]=='t') {if(j!=0 && (s[j-1]=='u' || s[j-1]=='v' ||s[j-1]=='t')){System.out.print(" 8");}
+          else {System.out.print("8");}}
+        else if(s[j]=='u') {if(j!=0 && (s[j-1]=='t' || s[j-1]=='v' ||s[j-1]=='u')){System.out.print(" 88");}
+          else {System.out.print("88");}}
+        else if(s[j]=='v') {if(j!=0 && (s[j-1]=='t' || s[j-1]=='u' ||s[j-1]=='v')){System.out.print(" 888");}
+          else {System.out.print("888");}}
+        else if(s[j]=='w') {if(j!=0 && (s[j-1]=='x' || s[j-1]=='y' || s[j-1]=='z'||s[j-1]=='w') ){System.out.print(" 9");}
+          else {System.out.print("9");}}
+        else if(s[j]=='x') {if(j!=0 && (s[j-1]=='w' || s[j-1]=='y' || s[j-1]=='z'||s[j-1]=='x')){System.out.print(" 99");}
+          else {System.out.print("99");}}
+        else if(s[j]=='y') {if(j!=0 && (s[j-1]=='w' || s[j-1]=='x' || s[j-1]=='z'||s[j-1]=='y')){System.out.print(" 999");}
+          else {System.out.print("999");}}
+        else if(s[j]=='z') {if(j!=0 && (s[j-1]=='w' || s[j-1]=='x' || s[j-1]=='y'||s[j-1]=='z')){System.out.print(" 9999");}
+          else {System.out.print("9999");}}
+        else if(s[j]==' '){
+          if(j!=0 && s[j-1]==' ')System.out.print(" 0");
+          else System.out.print("0");
+        }
+        
+      } 
+      System.out.println();
+    }
+    
+  }
+}
