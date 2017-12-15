@@ -1,0 +1,16 @@
+import java.util.*;
+public class autori{
+  public static void main(String[] args){
+    Scanner input = new Scanner(System.in);
+    
+    char[] words = input.nextLine().toCharArray();
+    System.out.print(words[0]);
+    
+    for (int i=1; i< words.length; i++){
+      if (words[i-1]== '-'){
+        System.out.print(words[i]);
+      }
+    }
+    input.close();
+  }
+}
